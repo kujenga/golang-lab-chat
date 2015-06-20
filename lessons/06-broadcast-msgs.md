@@ -36,23 +36,17 @@ Got it?? Not sure? No worries, Let's go through the steps.
     1. :star2: In the loop, call `cu.ReadLine` to read an incoming msg.
     1. :star2: Prepend the incoming msg with the username surrounded by brackets, e.g.: `msg = "[" + cu.username "]" + msg`
     1. :star2: Place this modified message on the `chatroom.incoming` queue.
-   
-    [Stuck on any of the steps above? Ask your TA, or see the solution!](code/06-broadcast-msgs/chat.go#L100-L109)
 
   1. Now, you need to make sure that the `ReadIncomingMessages` goroutine is started
   in `ChatUser.Login`.  
     
     1. :star2: Modify the `Login` function to start the goroutine for `ReadIncomingMessages` after `WriteOutgoingMessages`.
 
-    [Stuck on any of the steps above? Ask your TA, or see the solution!](code/06-broadcast-msgs/chat.go#L138)
-
 1. Cool. Remember `ChatRoom.ListenForMessages()`?  Let's modify it so it sees
   the new messages on the `chatroom.incoming` channel.
 
   1. :star2: Add a 'case' within the `for/select` loop that reads a msg string from the `incoming` channel.
   1. :star2: Call `ChatRoom.Broadcast` on the read msg.
-    
-  [Stuck on any of the steps above? Ask your TA, or see the solution!](code/06-broadcast-msgs/chat.go#L40-L41)
 
   At the end it will look like:
 
@@ -78,7 +72,7 @@ multiple simultaneous clients to test how messages look to other users.
 
   ```bash
    $ nc localhost 6677
-   Welcome to Jen's chat server!
+   Welcome to my chat server!
    Please enter your username: funcuddles
    Welcome, funcuddles
    *** funcuddles just joined the chatroom

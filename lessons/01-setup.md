@@ -52,7 +52,5 @@ this repository, and a file `chat.go` that will contain the code.
   2015/05/03 20:13:42 Chat server starting!
   ```
 
-[Get the solution](code/01-setup/chat.go)
-
 [Proceed to Lesson 2](02-socket.md)
 

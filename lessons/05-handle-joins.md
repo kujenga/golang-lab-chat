@@ -42,8 +42,6 @@ So, let's go!
   1. In `ChatRoom.ListenForMessages`, implement the following
       * :star2: Create a `for/select` loop, and ensure this loop runs in a goroutine.
       * :star2: In the loop, receive a `ChatUser` object on the `cr.joins` channel. Store it in the `users` map by its username.
-   
-    [Stuck on any of the steps above? Ask your TA, or see the solution!](code/05-handle-joins/chat.go)
 
 1. Great! now the object should be stored in the users map. However: it would
   be nice if the other people in the chatroom knew when new users joined the chatroom server.
@@ -55,21 +53,15 @@ So, let's go!
   function. This function  runs in a loop in a goroutine, and calls `ChatUser.WriteString()` to write that message to the socket when it sees a new message on the `outgoing channel`.
 
   1. :star2: Implement `ChatUser.Send` to place a message on the `chatuser.outgoing` channel.
-    
-     [Stuck on any of the steps above? Ask your TA, or see the solution!](code/05-handle-joins/chat.go)
 
   1. :star2: Implement `ChatUser.WriteOutgoingMessages` by: 
 
     1. :star2: Creating a loop that constantly reads a msg from the `chatuser.outgoing` channel; 
     1. :star2: Adding a newline to this msg;
     1. :star2: Write the msg to the socket by calling `chatuser.WriteString`.
-
-    [Stuck on any of the steps above? Ask your TA, or see the solution!](code/05-handle-joins/chat.go)
   
   4. :star2: Let's start the outgoing message listener! At the end of `ChatUser.Login`, call `cu.WriteOutgoingMessages` loop and make 
   sure it runs in a goroutine.
-
-    [Stuck on any of the steps above? Ask your TA, or see the solution!](code/05-handle-joins/chat.go)
 
 1. Now that this is all setup, let's broadcast a message whenever the chatroom
 sees a new user login.
@@ -102,7 +94,7 @@ try connecting with multiple simultaneous clients to make sure you see the join 
     Trying 127.0.0.1...
     Connected to localhost.
     Escape character is '^]'.
-    Welcome to Jen's chat server!
+    Welcome to my chat server!
     Please enter your username: funcuddles
     Welcome, funcuddles
     *** funcuddles just joined the chatroom

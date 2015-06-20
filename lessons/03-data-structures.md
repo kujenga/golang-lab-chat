@@ -10,8 +10,7 @@ Let's review the design of the data structures and some of the requirements:
   1. The `ChatRoom` must know about all of the active connections.
   1. Each connection is tracked in a `ChatUser` object.
   1. The `ChatRoom` must be able to receive messages from a single connection,
-  and replay it back to the other connections.  Otherwise, it will not be a very
-  good chatroom!
+  and replay it back to the other connections.  Otherwise, it will not be a very good chatroom!
   1. When a new connection is established, the `ChatRoom` must be notified
   of these new connections.
 
@@ -32,8 +31,6 @@ Let's review the design of the data structures and some of the requirements:
     * a private member channel `disconnects` of type `chan string`
   1. :star2: Initialize all of these data structures in the `NewChatRoom()` constructor.
 
-  [Stuck on any of the steps above? Ask your TA, or see the solution!](code/03-data-structures/chat.go#L17-L34)
-
 1. Find the `ChatUser` struct in `chat.go`.
 
   ```go
@@ -53,8 +50,6 @@ Let's review the design of the data structures and some of the requirements:
     * `bufio.NewReader/bufio.NewWriter` should accept the `conn` to create the `reader`
     and `writer` variables.
     * `disconnect` should be initially set to false
-
-  [Stuck on any of the steps above? Ask your TA, or see the solution!](code/03-data-structures/chat.go#L52-L74)
 
 1. Don't worry too much about what all of these variables are for right now.
 As we fill out the rest of the code, you will gain a better understanding of what they will be used for, or you can ask your TA for more information.
