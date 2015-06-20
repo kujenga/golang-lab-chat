@@ -16,8 +16,7 @@ We will walk through populating all of these to create the chat server in later 
 
 ## Steps
 
-1. Create a directory `chat-server` for your code underneath the main folder for 
-this repository, and a file `chat.go` that will contain the code.
+1. Create a directory `chat-server` for your code underneath the main folder for this repository, and a file `chat.go` that will contain the code.
 
   E.g. under `golang-lab-chat/chat-server`
   
@@ -31,7 +30,7 @@ this repository, and a file `chat.go` that will contain the code.
   system, so any changes you make will be reflected.
 
 
-1. :star2: Download the basic scaffold code [chat.go](code/01-setup/chat.go), and put it in the `chat-server` folder.  Open `chat.go` with your favorite code editor.
+1. :star2: Download the basic scaffold code [chat.go](scaffold/chat.go), and put it in the `chat-server` folder.  Open `chat.go` with your favorite code editor.
 
   1. Review the struct `ChatRoom`.  This struct will handle 
     
